@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UangBul</string>
+    <string name="text_fragment_expense">Fragment Expense</string>
+    <string name="text_expense">Pengeluaran</string>
+    <string name="text_fragment_category">Fragment Category</string>
+    <string name="text_category">Kategori</string>
+    <string name="text_budget">Anggaran</string>
+    <string name="text_app_toolbar">App Toolbar</string>
+</resources>

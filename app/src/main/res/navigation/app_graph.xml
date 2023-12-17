@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/budgetFragment">
+
+    <fragment
+        android:id="@+id/budgetFragment"
+        android:name="com.ipritdev.catatananggaranbulanan.BudgetFragment"
+        android:label="@string/text_budget" />
+    <fragment
+        android:id="@+id/expenseFragment"
+        android:name="com.ipritdev.catatananggaranbulanan.ExpenseFragment"
+        android:label="@string/text_expense" />
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.ipritdev.catatananggaranbulanan.CategoryFragment"
+        android:label="@string/text_category" />
+</navigation>

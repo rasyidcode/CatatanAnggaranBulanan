@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/fragment_expense"
+            android:contentDescription="@string/text_fragment_expense"
+            android:icon="@drawable/ic_money"
+            android:title="@string/text_expense" />
+        <item
+            android:id="@+id/fragment_category"
+            android:contentDescription="@string/text_fragment_category"
+            android:icon="@drawable/ic_category"
+            android:title="@string/text_category" />
+    </group>
+</menu>
