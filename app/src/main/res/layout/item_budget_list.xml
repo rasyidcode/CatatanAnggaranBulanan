@@ -6,13 +6,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_marginBottom="@dimen/item_bottom_padding">
 
         <ImageView
             android:id="@+id/item_icon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/background_circle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/background_square"
             android:contentDescription="@string/app_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -21,57 +21,121 @@
 
         <TextView
             android:id="@+id/category"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            app:layout_constraintBottom_toBottomOf="@+id/item_icon"
-            app:layout_constraintEnd_toStartOf="@+id/budget_amount"
-            app:layout_constraintStart_toEndOf="@+id/item_icon"
-            app:layout_constraintTop_toTopOf="@+id/item_icon"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_icon"
             tools:text="Makan" />
+
+        <TextView
+            android:id="@+id/text_budget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_budget"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/budget_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            app:layout_constraintBottom_toBottomOf="@+id/item_icon"
+            app:layout_constraintStart_toStartOf="@+id/text_budget"
+            app:layout_constraintTop_toBottomOf="@+id/text_budget"
+            tools:text="Rp 600,000" />
+
+        <ImageButton
+            android:id="@+id/btn_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/budget_more_action_button"
+            android:padding="@dimen/icon_button_default_padding"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/item_icon"
-            tools:text="600k" />
+            app:srcCompat="@drawable/ic_more_vert"
+            app:tint="?colorPrimary" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="4dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/bg_budget_progress"
-            app:layout_constraintBottom_toBottomOf="@+id/budget_used"
-            app:layout_constraintEnd_toStartOf="@+id/budget_left"
-            app:layout_constraintStart_toEndOf="@+id/budget_used"
-            app:layout_constraintTop_toTopOf="@+id/budget_used" />
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/budget_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/category"
+            tools:progress="26" />
 
         <TextView
-            android:id="@+id/budget_used"
+            android:id="@+id/text_budget_percent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/item_icon"
-            app:layout_constraintTop_toBottomOf="@+id/item_icon"
-            tools:text="300k" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintBottom_toTopOf="@+id/budget_progress"
+            app:layout_constraintEnd_toEndOf="@+id/budget_progress"
+            tools:text="26%" />
 
-        <TextView
-            android:id="@+id/budget_left"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-            android:textStyle="bold"
+            android:background="@color/gray_200"
+            android:orientation="vertical"
+            android:padding="@dimen/card_default_padding"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/budget_used"
-            tools:text="300k" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/budget_progress">
+
+            <LinearLayout
+                android:id="@+id/layout_budget_used"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label_budget_used"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_budget_used"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+                <TextView
+                    android:id="@+id/text_budget_used"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    tools:text="Rp 350,000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_budget_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label_budget_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_budget_left"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+                <TextView
+                    android:id="@+id/text_budget_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    tools:text="Rp 250,000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
