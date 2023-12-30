@@ -17,7 +17,7 @@
       <entry key="test_getListBudgetAndCategory()">
         <State />
       </entry>
-      <entry key="test_updateBudget()">
+      <entry key="test_getListBudgetAndCategoryByBudgetedAt()">
         <State />
       </entry>
     </value>
