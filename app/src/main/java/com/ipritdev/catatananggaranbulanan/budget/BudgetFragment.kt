@@ -1,4 +1,4 @@
-package com.ipritdev.catatananggaranbulanan
+package com.ipritdev.catatananggaranbulanan.budget
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,20 +11,19 @@ class BudgetFragment : Fragment() {
 
     private var _binding: FragmentBudgetBinding? = null
 
-    private val binding get() = _binding
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentBudgetBinding.inflate(inflater, container, false)
-
-        return binding?.root
+        return binding.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 

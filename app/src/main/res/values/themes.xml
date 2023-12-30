@@ -14,4 +14,8 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/gray_50</item>
     </style>
+
+    <style name="Theme.CatatanAnggaranBulanan.CardChildContainerBackground" parent="Theme.CatatanAnggaranBulanan">
+        <item name="android:background">@color/gray_100</item>
+    </style>
 </resources>

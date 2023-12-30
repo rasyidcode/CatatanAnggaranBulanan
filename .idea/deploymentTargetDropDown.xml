@@ -2,7 +2,22 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="BudgetDaoTest">
+        <State />
+      </entry>
+      <entry key="CategoryDaoTest">
+        <State />
+      </entry>
+      <entry key="ExpenseDaoTest">
+        <State />
+      </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="test_getListBudgetAndCategory()">
+        <State />
+      </entry>
+      <entry key="test_updateBudget()">
         <State />
       </entry>
     </value>
