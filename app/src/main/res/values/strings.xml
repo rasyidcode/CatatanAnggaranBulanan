@@ -12,4 +12,6 @@
     <string name="budget_more_action_button">Budget more action button</string>
     <string name="text_budget_used">Terpakai</string>
     <string name="text_budget_left">Tersisa</string>
+    <string name="content_desc_budget_icon">Budget Icon</string>
+    <string name="floating_action_button">Floating action button</string>
 </resources>

@@ -1,16 +1,16 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.kotlin)
+    alias(libs.plugins.devtools.ksp)
     id("kotlin-kapt")
-    id("com.google.devtools.ksp")
 }
 
 android {
-    namespace = "com.ipritdev.catatananggaranbulanan"
+    namespace = "com.ipritdev.uangbul"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.ipritdev.catatananggaranbulanan"
+        applicationId = "com.ipritdev.uangbul"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
@@ -46,37 +46,30 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
 
     // Lifecycle
-    val lifecycleVersion = "2.6.2"
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
 
     // Navigation
-    val navVersion = "2.7.6"
-    implementation("androidx.navigation:navigation-fragment-ktx:${navVersion}")
-    implementation("androidx.navigation:navigation-ui-ktx:${navVersion}")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     // Room
-    val roomVersion = "2.6.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    implementation("androidx.room:room-ktx:$roomVersion")
-    ksp("androidx.room:room-compiler:$roomVersion")
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 
     // Local Test
-    val jUnitVersion = "4.13.2"
-    testImplementation("junit:junit:$jUnitVersion")
-    testImplementation("androidx.room:room-testing:$roomVersion")
+    testImplementation(libs.junit)
+    testImplementation(libs.androidx.room.testing)
 
     // Instrumented Test
-    val testCoreVersion = "1.5.0"
-    androidTestImplementation("androidx.test:core:$testCoreVersion")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    val archTestingVersion = "2.2.0"
-    androidTestImplementation("androidx.arch.core:core-testing:$archTestingVersion")
-    val espressoVersion = "3.5.1"
-    androidTestImplementation("androidx.test.espresso:espresso-core:$espressoVersion")
+    androidTestImplementation(libs.androidx.test.core)
+    androidTestImplementation(libs.androidx.test.junit)
+    androidTestImplementation(libs.androidx.test.espresso.core)
+    androidTestImplementation(libs.androidx.arch.core.testing)
 }

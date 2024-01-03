@@ -6,14 +6,14 @@
 
     <fragment
         android:id="@+id/budgetFragment"
-        android:name="com.ipritdev.catatananggaranbulanan.budget.BudgetFragment"
+        android:name="com.ipritdev.uangbul.BudgetFragment"
         android:label="@string/text_budget" />
     <fragment
         android:id="@+id/expenseFragment"
-        android:name="com.ipritdev.catatananggaranbulanan.expense.ExpenseFragment"
+        android:name="com.ipritdev.uangbul.ExpenseFragment"
         android:label="@string/text_expense" />
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="com.ipritdev.catatananggaranbulanan.category.CategoryFragment"
+        android:name="com.ipritdev.uangbul.CategoryFragment"
         android:label="@string/text_category" />
 </navigation>
