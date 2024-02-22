@@ -1,6 +1,8 @@
 package com.ipritdev.uangbul.utils
 
+import java.text.NumberFormat
 import java.util.Calendar
+import java.util.Locale
 
 fun Calendar.setBudgetedAt(year: Int, month: Int) {
     this.set(Calendar.YEAR, year)
@@ -28,3 +30,7 @@ fun Calendar.setExpensedAt(
     this.set(Calendar.SECOND, second)
     this.set(Calendar.MILLISECOND, 0)
 }
+
+fun Long.toIDR(): String = NumberFormat.getCurrencyInstance(
+    Locale("in", "ID")
+).format(this)

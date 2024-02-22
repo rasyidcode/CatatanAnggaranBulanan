@@ -3,6 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ipritdev.uangbul.ui.budget.BudgetViewModel" />
+
+        <variable
+            name="onDateSetListener"
+            type="android.app.DatePickerDialog.OnDateSetListener" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,7 +27,9 @@
                 android:id="@+id/card_budget_summary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_default">
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -27,33 +40,43 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:padding="8dp">
 
                         <ImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="?attr/selectableItemBackground"
-                            android:contentDescription="@string/text_arrow_left_icon"
-                            android:padding="@dimen/icon_button_default_padding"
-                            android:src="@drawable/ic_arrow_left"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="?selectableItemBackgroundBorderless"
+                            android:contentDescription="@string/btn_budget_prev_month"
+                            android:onClick="@{() -> viewModel.setToPreviousMonth()}"
+                            android:src="@drawable/ic_arrow_back"
                             app:tint="?colorPrimary" />
 
                         <TextView
+                            android:id="@+id/monthYearPicker"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:layout_gravity="center_vertical"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
+                            android:background="?selectableItemBackground"
+                            android:gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:text="@{viewModel.selectedMonthString}"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                            tools:text="Desember 2023" />
+                            app:context="@{context}"
+                            app:onClickMonthYear="@{viewModel.selectedMonth}"
+                            app:onDateSetListener="@{onDateSetListener}"
+                            tools:text="Dec 2023" />
 
                         <ImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="?attr/selectableItemBackground"
-                            android:contentDescription="@string/text_arrow_right_icon"
-                            android:padding="@dimen/icon_button_default_padding"
-                            android:src="@drawable/ic_arrow_right"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="8dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="@string/btn_budget_next_month"
+                            android:onClick="@{() -> viewModel.setToNextMonth()}"
+                            android:src="@drawable/ic_arrow_forward"
                             app:tint="?colorPrimary" />
 
                     </LinearLayout>
@@ -68,7 +91,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:baselineAligned="false"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="8dp">
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -80,12 +104,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
-                                tools:text="Total Anggaran" />
+                                android:text="@string/overline_budget_total"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Overline" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
                                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                                 android:textColor="@color/green_500"
                                 android:textStyle="bold"
@@ -103,12 +128,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
-                                tools:text="Total Terpakai" />
+                                android:text="@string/overline_budget_used_total"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Overline" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
                                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                                 android:textColor="@color/red_500"
                                 android:textStyle="bold"
@@ -128,8 +154,8 @@
                 android:layout_marginStart="@dimen/margin_default"
                 android:layout_marginTop="@dimen/margin_default"
                 android:layout_marginEnd="@dimen/margin_default"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
-                tools:text="Anggaran Bulan Ini" />
+                android:text="@string/text_current_month_budget"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Overline" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"

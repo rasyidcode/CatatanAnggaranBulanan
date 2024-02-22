@@ -6,12 +6,15 @@
     <string name="text_category">Kategori</string>
     <string name="text_budget">Anggaran</string>
     <string name="text_app_toolbar">App Toolbar</string>
-    <string name="text_arrow_left_icon">Arrow Left</string>
-    <string name="text_arrow_right_icon">Arrow Right</string>
+    <string name="btn_budget_prev_month">Prev Month</string>
+    <string name="btn_budget_next_month">Next Month</string>
     <string name="text_add_new_budget">Add new budget</string>
     <string name="budget_more_action_button">Budget more action button</string>
     <string name="text_budget_used">Terpakai</string>
     <string name="text_budget_left">Tersisa</string>
     <string name="content_desc_budget_icon">Budget Icon</string>
     <string name="floating_action_button">Floating action button</string>
+    <string name="text_current_month_budget">Anggaran Bulan Ini</string>
+    <string name="overline_budget_total">Total Anggaran</string>
+    <string name="overline_budget_used_total">Total Terpakai</string>
 </resources>

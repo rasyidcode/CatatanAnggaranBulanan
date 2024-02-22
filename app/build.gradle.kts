@@ -66,6 +66,7 @@ dependencies {
     // Local Test
     testImplementation(libs.junit)
     testImplementation(libs.androidx.room.testing)
+    testImplementation(libs.androidx.arch.core.testing)
 
     // Instrumented Test
     androidTestImplementation(libs.androidx.test.core)

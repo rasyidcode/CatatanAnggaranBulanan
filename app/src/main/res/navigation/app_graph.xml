@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/budgetFragment"
-        android:name="com.ipritdev.uangbul.BudgetFragment"
+        android:name="com.ipritdev.uangbul.ui.budget.BudgetFragment"
         android:label="@string/text_budget" />
     <fragment
         android:id="@+id/expenseFragment"

@@ -2,22 +2,22 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="BudgetDaoTest">
+      <entry key="BudgetViewModelTest">
         <State />
       </entry>
       <entry key="CategoryDaoTest">
         <State />
       </entry>
-      <entry key="ExpenseDaoTest">
-        <State />
-      </entry>
       <entry key="app">
         <State />
       </entry>
-      <entry key="test_getListBudgetAndCategory()">
+      <entry key="test_monthBudgetTotal()">
         <State />
       </entry>
-      <entry key="test_getListBudgetAndCategoryByBudgetedAt()">
+      <entry key="test_selectedMonth()">
+        <State />
+      </entry>
+      <entry key="test_setToPrevMonth()">
         <State />
       </entry>
     </value>
